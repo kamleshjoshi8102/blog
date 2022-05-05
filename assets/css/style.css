@@ -28,7 +28,7 @@ h2 {
 }
 
 h1 {
-	font-weight: normal;
+	font-weight: bold;
 }
 
 h2 {
@@ -39,6 +39,7 @@ h2 {
 h3 {
 	font-size: 1.8em;
 	margin: 15px 0;
+	font-weight: bold;
 }
 
 img {
@@ -225,3 +226,27 @@ input[type="submit"] {
 	margin: 0 auto;
 	padding: 100px 0;
 }
+/*  
+	Updated Css 
+.blog-card {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem auto;
+	box-shadow: 0 3px 7px -1px rgba(#000, .1);
+	margin-bottom: 1.6%;
+	background: $color_white;
+	line-height: 1.4;
+	font-family: sans-serif;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 0;
+	a {
+	  color: inherit;
+	  &:hover {
+		color: $color_prime;
+	  }
+	}
+
+
+
+*/

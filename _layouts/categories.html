@@ -3,16 +3,20 @@ layout: page
 ---
 
 
-<ul class="post-list">
-	{% for post in page.category_list %} 
-	  <li>
-      <article>
-        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} 
-          <span class="date-show">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-          </span>
-        </a>
-      </article>
-    </li>
-	{% endfor %}
-</ul>
+<div class="blog-card">
+
+  <ul class="post-list">
+    {% for post in page.category_list %} 
+      <li>
+        <article>
+          <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} 
+            <span class="date-show">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </span>
+          </a>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>

@@ -136,7 +136,7 @@
 
 .sidebar-category > li {
 	min-width: 100%;
-	font-size: 16px;
+	font-size: 24px;
 }
 
 .form-control {
@@ -149,7 +149,7 @@
 
 .categories-heading {
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 20px;
 }
 
 .fa-circle {
@@ -233,7 +233,7 @@ footer {
 }
 
 .bg-black {
-	background: #2d2727;
+	background: #001D6E;
 }
 
 .pager {
@@ -247,8 +247,12 @@ footer {
 .search-box {
 	min-width: 200px;
 }
-
-
+.rounded{
+	border-radius: 10px !important;
+}
+body{
+	background-color:#E8F9FD;
+}
 /* ---------- old code ------------ */
 /*
 span + .entry-title {
