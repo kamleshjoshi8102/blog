@@ -6,7 +6,7 @@ modified: 2022-05-02 17:59:16 +0530
 category: the-other-side
 tags: [Book Review, Books, Success, Outliers]
 author: manish
-image:
+image: 
   feature: 
   credit: 
   creditlink: 

@@ -6,10 +6,10 @@ tags: [eLitmus, recent]
 ---
 
 
-<ul class="post-list">
-{% for post in site.posts limit:10 %} 
- 
-<div class="card rounded">
+<ul class="post-list custom-cardcss">
+  {% for post in site.posts limit:10 %}
+
+  <!-- <div class="card rounded hover ">
   <div class="card-body">
     <span class="entry-date date published">
         <time datetime="{{ post.date | date_to_xmlschema }}">
@@ -32,7 +32,55 @@ tags: [eLitmus, recent]
             </div>
     
   </div>
-</div>
-{% endfor %}
+</div>  -->
 
+
+  <article class="article-recent">
+    <div class="article-recent-main">
+      <h2 class="article-title"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} </a></h2>
+      <div class="article-body">
+        {% if post.excerpt %} 
+          {% capture full_url %} 
+                {{ site.url }}{{ site.baseurl }}{{ post.url }} 
+          {% endcapture %}
+          {{ post.excerpt | remove: '<p>' | remove: '</p>' }} 
+        
+        {% endif %}
+      </div>
+      <a href="{{ full_url }}" rel="nofollow" class="article-read-more">CONTINUE READING</a>
+    </div>
+    <div class="article-recent-secondary">
+      <img src="images/{{post.title}}.png" alt="" class="article-image">
+      <p class="article-info"><i class="fa fa-calendar"></i>{{ post.date | date: "%B %d, %Y" }}</p>
+    </div>
+</article>
+
+
+  <!-- Cards try -->
+ 
+
+  <!-- <li class="card">
+    <div class="article-recent-secondary che">
+      <p class="article-info"><i class="fa fa-calendar"></i>{{ post.date | date: "%B %d, %Y" }}</p>
+    </div>
+    <img src="images/{{post.title}}.png" alt="images/{{post.title}}.png">
+    <h2 class="article-title"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} </a></h2>
+    <div class="article-body">
+      {% if post.excerpt %} 
+        {% capture full_url %} 
+              {{ site.url }}{{ site.baseurl }}{{ post.url }} 
+        {% endcapture %}
+        {{ post.excerpt | remove: '<p>' | remove: '</p>' }} 
+      
+      {% endif %}
+    </div>
+    <a href="{{ full_url }}" rel="nofollow" class="article-read-more">CONTINUE READING</a>
+   
+    
+   
+  </li> -->
+
+
+
+  {% endfor %}
 </ul>

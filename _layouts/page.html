@@ -3,8 +3,9 @@
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
 <!--[if gt IE 8]><!-->
+  
 <html class="no-js" lang="en">
-<!--<![endif]-->
+<!-- [endif] -->
 
 <head>{% include head.html %}</head>
 
@@ -26,29 +27,29 @@
         {% endif %} 
       {% endif %}
       
-      <div class="container-fluid">
+      <div class="">
 
-        <div class="row">
-          <header class="col-sm-12 col-md-12 col-lg-12 entry-header">
-            <h1>
-              <center>
-                {% if page.headline %}
-                  {{ page.headline }}
-                {% else %}
-                  {{ page.title }}
-                {% endif %}
-              </center>
-            </h1>
-          </header>
-        </div>
+        <div class="row" style="padding: 0; margin: 0 !important;" >
 
-        <div class="row">
-
-          <div class="col-sm-12 col-md-3 col-lg-3 check">
+          <div class="col-sm-12 col-md-2 col-lg-2 check" style="padding: 0;">
             {% include sidebar.html %}
           </div>
 
           <div class="col-sm-12 col-md-8 col-lg-8">
+            <div class="row">
+              <header class="col-sm-12 col-md-12 col-lg-12 entry-header">
+                <h1>
+                  <center>
+                    {% if page.headline %}
+                      {{ page.headline }}
+                    {% else %}
+                      {{ page.title }}
+                    {% endif %}
+                  </center>
+                </h1>
+              </header>
+            </div>
+            
             <div class="post-content-justify">
               {{ content }}
             </div>
