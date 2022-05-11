@@ -1,12 +1,221 @@
-<header class="headroom">
+<!-- ---
+layout: page
+title: Category Index
+description: "List of recent blog posts."
+tags: [eLitmus, recent]
+--- -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top" role="navigation">
-<!-- <nav role="navigation"> -->
+<header class="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* .mymenulist .active b{
+    display: block;
+} */
+
+.nav{
+    z-index: 1;
+    position: relative;
+}
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+       
+
+        .navheader{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-right: 2%;
+        }
+        .categories{
+            padding-top: 20px;
+        }
+        
+        .categories button{
+            border:none;
+            padding: 10px 20px;
+            border-radius: 24px;
+            background-color:rgb(48, 0, 124);
+            color:#fff;
+            font-weight: bold;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .categories button:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color:rgb(33, 1, 85);
+        }
+
+        .check {
+            position: fixed;
+            /* left:0;
+          top:0; */
+        }
+
+        .categories a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .categories a:hover{
+            color:#fff
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+<!-- {% capture category_count %} {{ site.categories | size }}* {% endcapture %} {% assign count = category_count | plus: 0 %} {% if count > 1 %}
 
 
-        <!-- <script src="https://kit.fontawesome.com/b99e675b6e.js"></script> -->
+<div class="fixed-sidebar mx-auto">
 
-<!-- <div class="wrapper">
+    <ul class="sidebar-category list-group ml-auto">
+
+        <li class="categories-heading list-group-item">
+            <span class="fa fa-th-list"></span> Categories:
+        </li>
+
+        {% for category in site.categories %}
+
+        <li class="list-group-item pl-3">
+            <a name="{{ category | first | capitalize }}" href="{{ site.url }}{{ site.baseurl }}/categories/{{ category | first }}/" class="category">  {{ category | first | capitalize }} </a>
+        </li>
+        
+        {% endfor %}
+    
+    </ul>
+
+</div>
+
+{% endif %} -->
+<!-- <nav class="nav"> -->
+            <div class="navheader">
+
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                
+                <div class="categories">
+                   
+                    {% for category in site.categories %}
+                        <button>
+                            
+                            <a name="{{ category | first | capitalize }}" href="{{ site.url }}{{ site.baseurl }}/categories/{{ category | first }}/" class="category">  {{ category | first | capitalize }} </a>
+                
+                        </button>
+                        {% endfor %}
+
+                </div>
+            </div>
+
+            <div id="mySidenav" class="sidenav">
+                <a class="navbar-brand" href="{{ site.baseurl }}/">
+                    <img src="https://cdn0.elitmus.net/assets/elitmus-only-logo-6efc8a74032179afdb89829a093e05bd05d627dd4354bbd1ff7f4eb5db8a0af8.svg"
+                        class="img-logo">
+                    <span>
+                        <div class="blog-label">blog</div>
+                    </span>
+                </a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                <ul class="nav navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <div class="dropdown search-box-margin">
+
+                            <div class="form-inline">
+                                {% capture category_count %} {{ site.categories | size }}* {% endcapture %} {% assign
+                                count = category_count | plus: 0 %}
+                                <input data-toggle="dropdown" placeholder="Search..." id="search-box"
+                                    class="form-control form-control-sm search-input dropdown-toggle"
+                                    aria-haspopup="true" aria-expanded="false">
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right nav-icon-size-reduce">
+                    {% for link in site.links %}
+                    <li class="nav-item fas mymenuoption">
+                        <b></b>
+                        <b></b>
+
+                        {% if link.external %}
+                        <a href="{{ link.url }}" class="nav-link">
+                            <i class="{{link.icon}}"></i> {{ link.title }}
+                        </a>
+                        {% else %}
+                        <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}" class="nav-link">
+                            <i class="{{link.icon}}"></i> {{ link.title }}
+                        </a>
+
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+
+                    <li class="nav-item fas ">
+                        <a href="{{ site.url }}{{ site.baseurl }}/feed.xml" class="nav-link" title="Atom/RSS feed">
+                            <i class="fa fa-rss"></i> Feed
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="social_media">
+                    <a href="#" style="color:black"> <i class="check fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="check fab fa-twitter"></i></a>
+                    <a href="#"><i class="check fab fa-instagram"></i></a>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!--
+     <div class="wrapper">
     <div class="sidebar">
         <a class="navbar-brand" href="{{ site.baseurl }}/">
             <img  src="https://cdn0.elitmus.net/assets/elitmus-only-logo-6efc8a74032179afdb89829a093e05bd05d627dd4354bbd1ff7f4eb5db8a0af8.svg" class="img-logo">
@@ -67,69 +276,27 @@
             
         </ul> 
         <div class="social_media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="check fab fa-facebook-f"></i></a>
+          <a href="#"><i class="check fab fa-twitter"></i></a>
+          <a href="#"><i class="check fab fa-instagram"></i></a>
       </div>
     </div>
    
 
 </div> -->
-<!--  ends new  -->
 
-
-      
-
-     
-
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav mr-auto">
-                <a class="navbar-brand" href="{{ site.baseurl }}/">
-                    <img  src="https://cdn0.elitmus.net/assets/elitmus-only-logo-6efc8a74032179afdb89829a093e05bd05d627dd4354bbd1ff7f4eb5db8a0af8.svg" class="img-logo">
-                    <span><div class="blog-label">blog</div></span>
-                </a>
-        
-                <li class="nav-item">
-                    <div class="dropdown search-box-margin">
-
-                        <div class="form-inline">
-                            {% capture category_count %} {{ site.categories | size }}* {% endcapture %} {% assign count = category_count | plus: 0 %}
-
-                            <input data-toggle="dropdown" placeholder="Search..." id="search-box" class="form-control form-control-sm search-input dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
- 
-            <ul class="nav navbar-nav navbar-right nav-icon-size-reduce">
-                {% for link in site.links %}
-                <li class="nav-item">
-                    {% if link.external %}
-                    <a href="{{ link.url }}" class="nav-link">
-                        <i class="{{link.icon}}"></i> {{ link.title }}
-                    </a>
-                    {% else %}
-                    <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}" class="nav-link">
-                        <i class="{{link.icon}}"></i> {{ link.title }}
-                    </a>
-                    {% endif %}
-                </li>
-                {% endfor %}
- 
-                <li class="nav-item">
-                    <a href="{{ site.url }}{{ site.baseurl }}/feed.xml" class="nav-link" title="Atom/RSS feed">
-                        <i class="fa fa-rss"></i> Feed
-                    </a>
-                </li>
-            </ul>
-
-
-
-        </div>
-
-    </nav>{% include browser-upgrade.html %}
+    <!-- </nav> -->
+    {% include browser-upgrade.html %}
 </header>
- 
 
- 
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
