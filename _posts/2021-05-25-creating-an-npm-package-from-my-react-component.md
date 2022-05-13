@@ -3,7 +3,7 @@ layout: post
 title: "Creating an npm package from my REACT Component"
 tldr:
 modified: 2021-05-25 22:14:23 +0530
-category: technology
+category: Technology
 tags: [REACT, npm]
 author: piyush
 image:
