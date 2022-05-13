@@ -6,7 +6,7 @@ modified: 2012-04-04 10:20:00 +0530
 tags: [email, header, spam]
 category: technology
 author: shireeshj
-image: 
+image:
   feature: 
   credit: 
   creditlink: 

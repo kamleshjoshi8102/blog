@@ -8,7 +8,15 @@
 <!-- [endif] -->
 
 <head>{% include head.html %}</head>
-
+<style>
+  .recent{
+  text-align:center;
+  margin:14px;
+  line-height: 1.7em;
+  margin-bottom:25px;
+  font-size:47px;
+}
+</style>
 <body id="page">
 
 {% include navigation.html %} 
@@ -35,7 +43,7 @@
           <div style="margin: auto;" class="col-sm-12 col-md-8 col-lg-8">
             <div class="row">
               <header class="col-sm-12 col-md-12 col-lg-12 entry-header">
-                <h1>
+                <h1 class="recent">
                   <center>
                     {% if page.headline %}
                       {{ page.headline }}

@@ -9,23 +9,10 @@ description: "An archive of posts sorted by date."
               
 
 
-<!-- <ul class="post-list">
-{% for post in site.posts %} 
-<centre>
-  <li><article><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} {{ post.category }}   
-    <span class="date-show">
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}
-
-    </time></span></a></article></li>
-</centre>  
-{% endfor %}
-</ul> -->
-
-
 <ul class="post-list">
 {% for post in site.posts %} 
 <centre>
-  <li><article><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} {{ post.category }}   
+  <li><article><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }} 
     <span class="date-show">
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}
 
@@ -33,3 +20,4 @@ description: "An archive of posts sorted by date."
 </centre>  
 {% endfor %}
 </ul>
+

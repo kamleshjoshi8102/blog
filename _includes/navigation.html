@@ -28,7 +28,7 @@
     }
 
     .navbar {
-        padding: 15px 10px;
+        /* padding: 15px 10px; */
         background: rgb(0, 0, 0);
         border: none;
         border-radius: 0;
@@ -43,6 +43,10 @@
         border: none;
         color: white;
         background-color: white;
+    }
+
+    .nav-item{
+        padding:0
     }
 
     .line {
@@ -352,8 +356,8 @@
         position: fixed;
     /* top: 100; */
         left: 1%;
-        z-index: 2;
-        top: 13%;
+        z-index: 3;
+        top: 8%;
         display: none;
     }
 
@@ -374,7 +378,7 @@
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark"
-    style="position: fixed;z-index: 2; height: 7%; width: 100%; display: flex; justify-content: space-between; ">
+    style="position: fixed;z-index: 3; height: 7%; width: 100%; display: flex; justify-content: space-between; ">
     <a class="navbar-brand" href="{{ site.baseurl }}/">
         <img src="https://cdn0.elitmus.net/assets/elitmus-only-logo-6efc8a74032179afdb89829a093e05bd05d627dd4354bbd1ff7f4eb5db8a0af8.svg"
             class="img-logo">
@@ -386,17 +390,19 @@
 
     <div id="navbarSupportedContent">
 
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-lg-0">
             <li class="nav-item">
                 <div class="form-inline">
                     {% capture category_count %} {{ site.categories | size }}* {% endcapture %} {% assign count =
                     category_count | plus: 0 %}
 
                     <input data-toggle="dropdown" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" aria-haspopup="true" aria-expanded="false">
-                    <div class="dropdown-menu" id="search-dropdown">
+                    <!-- <div class="dropdown-menu" id="search-dropdown">
                         <a role='presentation' class='dropdown-item search-results'> Type more.... </a>
-                    </div>
+                    </div> -->
                     <button class="btn  my-2 my-sm-0 " type="submit">Search</button>
+
+                    
             </li>
 
         </form>
@@ -417,13 +423,13 @@
     </h1>
    </div> -->
     <!-- Sidebar  -->
-    <!-- <h1 style="color: red;">hello</h1> -->
+
     <div class="menuToggle" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    <nav style="z-index: 1;" id="sidebar">
+    <nav style="z-index: 2;" id="sidebar">
         <ul class="list-unstyled components">
             {% for link in site.links %}
             <li class="active">
@@ -448,8 +454,7 @@
 
                     <li>
                         <a style="color: black;" name="{{ category | first | capitalize }}"
-                            href="{{ site.url }}{{ site.baseurl }}/categories/{{ category | first }}/"> {{ category |
-                            first | capitalize }} </a>
+                            href="{{ site.url }}{{ site.baseurl }}/categories/{{ category | first }}/"> {{ category | first | capitalize }} </a>
                     </li>
 
                     {% endfor %}
@@ -484,77 +489,6 @@
 
 
 
-
-
-
-<!-- 
-            <div class="container featured-body featured">
-              
-                                <div class="card">
-                                        <div class="card-header">
-                                            <img src="images/Outliers: The story of Success - Book Review.png" alt="rover" />
-                                        </div>
-                                            <div class="card-body">
-                                                <span class="tag tag-teal">Technology</span>
-                                                <h4>
-                                                    Outliers: The story of Success - Book Review the-other-side
-                                                </h4>
-                                                <p>
-                                                    “Outliers” by Malcolm Gladwell. “Outliers - The story of success” has two parts: Opportunity and Legacy.
-                                                </p>
-                                                <div class="user">
-                                                <img src="images/manish.jpg" alt="user" />
-                                                <div class="user-info">
-                                                    <h5>Manish Sharma</h5>
-                                                    <small>1 Week Ago</small>
-                                                </div>
-                                                </div>
-                                    </div>
-                                </div>
-                <div class="card">
-                <div class="card-header">
-                    <img src="images/To the Goth Kids.png" alt="ballons" />
-                </div>
-                <div class="card-body">
-                    <span class="tag tag-purple">Career</span>
-                    <h4>
-                        To the Goth Kids
-                    </h4>
-                    <p>
-                       I completed my entire schooling (Classes I through XII) at one of Kolkata’s favoured catholic schools.
-                    </p>
-                    <div class="user">
-                    <img src="images/cariappa.jpeg" alt="user" />
-                    <div class="user-info">
-                        <h5>Roshan Cariappa</h5>
-                        <small>5 Years Ago</small>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="card">
-                <div class="card-header">
-                    <img src="https://images6.alphacoders.com/312/thumb-1920-312773.jpg" alt="city" />
-                </div>
-                <div class="card-body">
-                    <span class="tag tag-pink">Design</span>
-                    <h4>
-                    10 Rules of Dashboard Design
-                    </h4>
-                    <p>
-                    Dashboard Design Guidelines
-                    </p>
-                    <div class="user">
-                    <img src="https://studyinbaltics.ee/wp-content/uploads/2020/03/3799Ffxy.jpg" alt="user" />
-                    <div class="user-info">
-                        <h5>Carrie Brewer</h5>
-                        <small>1w ago</small>
-                    </div>
-                    </div>
-                </div>
-           </div>
-
- -->
 
 
 {% include browser-upgrade.html %}
